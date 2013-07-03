@@ -1,5 +1,7 @@
  CareersApp::Application.routes.draw do
   
+  get "career_pages/help"
+
   get "users/new"
 
   root                            to: 'static_pages#home'
