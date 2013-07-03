@@ -1,9 +1,18 @@
-CareersApp::Application.routes.draw do
-  root to: 'static_pages#home'
+ CareersApp::Application.routes.draw do
+  
+  get "users/new"
 
-  match '/help',     to:   'static_pages#help'
-  match '/about',    to:   'static_pages#about'
-  match '/contact',  to:   'static_pages#contact'
+  root                            to: 'static_pages#home'
+
+  match '/signup',                to: 'users#new'
+
+  match '/static_pages/home',    :to =>'static_pages#home'
+  match '/help',                  to: 'static_pages#help'
+  match '/static_pages/help',    :to =>'static_pages#help'
+  match '/about',                 to: 'static_pages#about'
+  match '/static_pages/about',   :to =>'static_pages#about'
+  match '/contact',               to: 'static_pages#contact'  
+  match '/static_pages/contact', :to =>'static_pages#contact'
 
 
   # The priority is based upon order of creation:
